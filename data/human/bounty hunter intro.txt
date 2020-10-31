@@ -116,6 +116,9 @@ mission "Join Guild"
             
     on accept
         event "swizzle 3"
+        log `Killed a dangerous pirate called Arthur Stalgren, and then joined the Bounty Hunters' Guild. Special jobs can be accepted at the Guild headquarters on New Britain in the Dabih system.`
+        log "People" "Zedekiah James" `A bounty hunter who can be found on Foundry in the Achernar system. He formally inducted me into the Bounty Hunters' Guild.`
+        log "People" "Arthur Stalgren" `An extremely slippery and dangerous pirate that I was tasked with killing for entry into the Guild.`
 
 event "swizzle 3"
     government "Escort"
