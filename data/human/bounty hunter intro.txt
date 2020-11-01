@@ -69,6 +69,10 @@ mission "Kill Stalgren 2"
             `   You turn around and see that the man is indeed Arthur Stalgren, and he is looking directly at you. He draws his weapon and fires, making a burn mark on the wall behind your head. Stalgren runs up a ramp into a rusty old Megaparsec Splinter, leaving his crewmate behind, and a few seconds later the ship blasts off into orbit. You hurry back to your own ship to follow him...`
                 launch
             
+            label gun
+            `   You draw your weapon and turn around to find yourself face-to-face with Stalgren himself, whose pistol is already out of his holster. You fire at each other without success, and he runs into a rusty old Splinter and blasts into orbit. You hurry back to your own ship to follow him...`
+                launch
+
             label hood
             `   The hooded figure finishes what it was doing at the computer and turns around, and you get a clear look at its face--it's not Stalgren.`
             choice
