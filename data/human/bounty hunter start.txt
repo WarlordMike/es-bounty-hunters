@@ -1,0 +1,196 @@
+
+mission "Alber 1"
+    name "Kill Pax Alber"
+    description `Hunt down and kill Pax Alber, an assassin belived to be behind the murders of several Senators, Syndicate leaders, and Navy commanders, for a payment of 5 million credits.`
+
+    source "New Britain"
+    destination "Hydra Station"
+
+    spaceport
+    to offer
+        has "Join Guild: done"
+    
+    on offer
+        conversation
+            `   You are eating in the spaceport bar when a man in the green uniform of a Guild taskmaster walks up to you. "Captain <last>!" he says. "I've got a job for you!"`
+            choice
+                `   "I'm interested."`
+                `   "Sorry, I'm really busy right now."`
+                    defer
+            
+            `   "Well," he says, sitting down across from you, "a few weeks ago, highly-placed people started getting assassinated. Senators, Syndicate execs, Navy commanders, and the like. We believe that the murders were committed by Pax Alber, an assassin that seems to be working for some crime syndicate we haven't heard of yet. Your job is to hunt Alber down and kill him."`
+            choice
+                `   "Where can I find him?"`
+                `   "Sorry, I'm not interested in tangling with an assassin."`
+                    defer
+            
+            `   "He was last seen at Hydra Station," says the taskmaster, pushing his glasses farther up on his nose. "We interrogated a few of his friends, and they also told us he could sometimes be found there."`
+            choice
+                `   "Why are you only sending me? If Alber is behind the assassinations, you should send every bounty hunter you have."`
+                `   "Sounds good."`
+                    goto soundsgood
+                `   "Sorry, I'm not interested in tangling with an assassin."`
+                    defer
+            
+            `   "We don't want every bounty hunter in the Dirt Belt to descend on the station at once," says the taskmaster indignantly. "That would spook them. Also, we already have agents on the station that will help you if they get wind of anything."`
+            choice
+                `   "Sounds good."`
+                `   "Sorry, I'm just not interested."`
+                    defer
+            
+            label soundsgood
+            `   "Good luck, Captain," says the taskmaster, and walks away.`
+                accept
+    
+mission "Alber 2"
+    name "Kill Pax Alber"
+    description `Hunt down and kill Pax Alber, an assassin belived to be behind the murders of several Senators, Syndicate leaders, and Navy commanders, for a payment of 5 million credits.`
+
+    source "Hydra Station"
+    waypoint Algorel
+    destination "Hydra Station"
+
+    landing
+    to offer
+        has "Alber 1: done"
+    
+    on offer
+        conversation
+            `   When you land, you leave your ship and begin searching the station for Alber. After searching the landing bays for two hours, you conclude that he isn't there.`
+            
+            label descision
+            `   Where will you search next?`
+            choice
+                `   (Search the residential sector.)`
+                `   (Search the maintenance level.)`
+                    goto maintenance
+                `   (Search the refinery.)`
+                    goto refinery
+            
+            `   The residential sector is just a few apartments arranged in a row. After patrolling the corridor for two long hours, you admit defeat.`
+                goto descision
+
+            label refinery
+            `   The refinery is very run-down and not exactly hustling and bustling. Since there are so few people working here, it doesn't take long to conclude that Alber is not hiding in the refinery.`
+                goto descision
+
+            label maintenance
+            `   You sneak past the guards and enter the maintenance level. You are walking down the main corridor when, from the radiation shielding control room, you hear raised voices and someone says Alber's name.`
+            choice
+                `   (Charge inside with my weapon drawn.)`
+                    goto charge
+                `   (Listen at the door.)`
+            
+            `   They must have had a guard in the hallway, because you only listen at the door for a minute before a blunt object hits you on the back of your head, and you sink into darkness without ever knowing who attacked you.`
+                goto wakeup
+            
+            label charge
+            `   You kick the door down with gun in hand, but there must've been someone standing just inside the entrance, because a stun baton hits you in the back of your head and everything goes black.`
+
+            label wakeup
+            `   You groggily come to and realize you are bound to a pipe at the back of the shielding control room. Pax Alber and several other mean-looking men are looking at you.`
+            choice
+                `   (Say nothing.)`
+                    goto saynothing
+                `   "Let me go!"`
+            
+            `   "We aren't in the business of helping people who want to kill us, bounty hunter scum," says a man with a nasty-looking pistol strapped to his belt.`
+            choice
+                `   "Who are you?"`
+                    goto risingsun
+            
+            label saynothing
+            `   You don't say anything, but soon one man with a nasty-looking pistol strapped to his belt says, "So, thought you'd try and interfere in our affairs, did you?"`
+            choice
+                `   (Say nothing.)`
+                `   "No."`
+                    goto no
+                `   "Yeah."`
+                    goto yeah
+            
+            `   "Not a talker, are you? Well, we have ways to make you talk." He is grinning a very nasty grin.`
+            choice
+                `   "Who are you?"`
+                    goto risingsun
+            
+            label no
+            `   "Lie to us, will you? Well, we have ways of making you talk. You will tell us who hired you, and why you're after poor Pax here." Alber is grinning.`
+            choice
+                `   "Who are you?"`
+                    goto risingsun
+            
+            label yeah
+            `   "Well, at least you're honest about it," says the man.`
+            choice
+                `   "Who are you?"`
+            
+            label risingsun
+            `   "We, dear Captain, are the Rising Sun. We are going to overthrow the galaxy's corrupt governments and establish a galaxywide anarchy, as was truly meant to be." As he speaks, you see an orange brand on his forearm shaped like a sun.`
+            `   "And now, Captain, because you unfortunately know about our little coup, we will have to kill you." He raises his gun to point at your head.`
+            `   But he never pulls the trigger. At the moment before he would have shot you, the door is blown apart by a small explosive and someone obscured from your vision by the smoke begins shooting at the Rising Sun members. Within seconds, they are all dead. The gunman steps into the room and you see it's Zede, the bounty hunter who inducted you into the Guild.`
+            `   "You okay, kid?" he asks, cutting you free.`
+            choice
+                `   "Yeah."`
+            
+            `   "Good thing I arrived when I did, or else--" He cuts off because a loud beeping is coming from one of the control consoles.`
+            `   Soon, maintenance workers arrive, some of whom look as if they're about to be sick from the sight of so many dead bodies. The foreman runs over to the console and reads it with a grim expression on his face. "Well, it looks like during the gunfight you had in here, one of the shield generators took a shot. The station is now exposed to Algorel's ultraviolet radiation."`
+            choice
+                `   "Sorry."`
+            
+            `   "Don't be. It was only a matter of time before this happened, and we've prepared well for it. Carl, sound the alarm and begin evacuation." The workman named Carl nods and radios the bridge.`
+            `   Zede shakes you and says, "Come on, kid. We've gotta catch those Rising Sun members before they escape the system." You hurry to your ship to go after them...`
+                launch
+    
+    npc kill
+        government "Rising Sun"
+        personality nemesis target staying vindictive
+        system Algorel
+        ship "Headhunter (Particle)" "Juggernaut"
+        dialog `The ship holding the other Rising Sun members has been destroyed. You should probably go back to Hydra Station and help with the evacuation.`
+
+mission "Evacuate 1"
+    name "Help Hydra Station Evacuate"
+    description `Hydra Station's radiation shields have gone down and the occupants have evacuated on escape pods. Go to the Navy base on New Austria in the Menkent system to try and get the Navy to send rescue ships.`
+
+    source "Hydra Station"
+    destination "New Austria"
+
+    landing
+    to offer
+        has "Alber 2: done"
+
+    on offer
+        event "Hydra Station Destroyed"
+        conversation
+            `   As soon as you land, you run up to the bridge to see if you can help. The commander greets you and says, "Well, there's not much you can do to help. With the state the station's in, we've been preparing for an evacuation for quite a while now. Nearly all of the escape pods are away. But you could fly over to the Navy base on Ingot and get them to send a Carrier to pick up these escape pods. But hurry, the pods can only last two weeks with their air, food, and water supplies. And now, Captain, I must abandon ship, so to speak." The bridge crew shuts their consoles and run off the bridge.`
+                launch
+
+mission "Evacuate 2"
+    name "Help Hydra Station Evacuate"
+    description `Hydra Station's radiation shields have gone down and the occupants have evacuated on escape pods. Help Admiral Lowell's fleet retrieve the escape pods and then meet him down on New Wales.`
+
+    landing
+    to offer
+        has "Evacuate 1: done"
+    
+    source "New Austria"
+    waypoint "Algorel"
+    destination "New Wales"
+
+    on offer
+        conversation
+            `   You hurry to the Navy offices and are intercepted in the doorway by a tall Navy officer whose uniform identifies him as a fleet admiral. "You must be Captain <last>. I'm Admiral Lowell," he says, shaking your hand. 
+            `   "Yes," you say.`
+            `   "We've already gotten the distress call from Hydra Station and I'm sending some Carriers to pick up those escape pods, and you can help us spot them. Once we're done, meet me down on New Wales." He runs off to his ship, and you return to yours, and prepare to go back to the Algorel system.`
+                accept
+
+    npc accompany
+        government "Republic"
+        personality heroic launches escort
+        ship "Carrier" "R.N.S. Olympus"
+        ship "Carrier" "R.N.S. Hercules"
+        ship "Carrier" "R.N.S. Orion"
+        system "Menkent"
+
+    on enter "Algorel"
+        dialog `Once all the escape pods have been accounted for, Admiral Lowell tells you to meet him down on New Wales.`
