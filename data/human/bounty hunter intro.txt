@@ -71,13 +71,12 @@ mission "Kill Stalgren 2"
         government "Bounty"
         dialog `Arthur Stalgren's ship, the Timbershank, has been eliminated. You can return to Foundry for payment.`
     on complete
-		payment 1000000
+        payment 1000000
         dialog `The man in armor contacts you and asks you to meet him in the spaceport bar.`
 
 mission "Join Guild"
 	name "Join the Bounty Hunters' Guild"
 	description `After killing Arthur Stalgren, you have the choice to join the Bounty Hunters' Guild, if you like. Report to New Britain in the Dabih system for official induction.`
-	spaceport
 	source "Foundry"
 	destination "New Britain"
 	to offer

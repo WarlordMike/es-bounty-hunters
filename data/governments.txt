@@ -34,3 +34,9 @@ government "Rising Sun"
     swizzle 6
     "player reputation" -1000
     "hostile hail" "hostile pirate"
+
+government "Rising Sun (Disguised)"
+    "display name" "Republic"
+    swizzle 0
+    "player reputation" -1000
+    "hostile hail" "hostile navy"
